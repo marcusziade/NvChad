@@ -35,20 +35,23 @@ local plugins = {
   {
     "zbirenbaum/copilot.lua",
     cmd = "Copilot",
+    lazy = false,
     event = "InsertEnter",
     config = function()
-      require("copilot").setup({
+      require("copilot").setup {
         auto_trigger = true,
+        suggestion = {
+          auto_trigger = true,
+          enabled = true,
+          keymap = {
+            accept = "¬",
+            next = "˜",
+            prev = "π",
+          }
+        },
         debounce = 30,
-        auto_refresh = true
-      })
-      require("copilot.suggestion").is_visible()
-      require("copilot.suggestion").accept_word()
-      require("copilot.suggestion").accept_line()
-      require("copilot.suggestion").next()
-      require("copilot.suggestion").prev()
-      require("copilot.suggestion").dismiss()
-      require("copilot.suggestion").toggle_auto_trigger()
+        auto_refresh = true,
+      }
     end,
   },
 }
