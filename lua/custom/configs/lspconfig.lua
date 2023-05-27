@@ -28,3 +28,22 @@ lspconfig.sourcekit.setup {
   capabilities = capabilities;
 }
 
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"rust-analyzer"},
+  filetypes = { "rust", "rs" },
+  settings = {
+    ["rust-analyzer"] = {
+      checkOnSave = {
+        command = "clippy",
+      },
+      cargo = {
+        loadOutDirsFromCheck = true,
+      },
+      procMacro = {
+        enable = true,
+      },
+    },
+  },
+}
