@@ -30,6 +30,14 @@ local plugins = {
     end,
   },
   {
+    "jose-elias-alvarez/typescript.nvim",
+    ft = "typescript",
+    config = function()
+      require "plugins.configs.typescript"
+      require "custom.configs.typescript"
+    end,
+  },
+  {
     "olexsmir/gopher.nvim",
     ft = "go",
     config = function(_, opts)

@@ -47,3 +47,18 @@ lspconfig.rust_analyzer.setup {
     },
   },
 }
+
+lspconfig.tsserver.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"typescript-language-server", "--stdio"},
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  root_dir = util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+  settings = {
+    typescript = {
+      preferences = {
+        importModuleSpecifierPreference = "relative",
+      },
+    },
+  },
+}
