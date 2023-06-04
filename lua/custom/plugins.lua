@@ -5,6 +5,10 @@ local plugins = {
       ensure_installed = {
         "gopls",
         "rust_analyzer",
+        "pyright",
+        "mypy",
+        "pyright",
+        "black",
       },
     },
   },

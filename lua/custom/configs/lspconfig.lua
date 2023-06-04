@@ -62,3 +62,11 @@ lspconfig.tsserver.setup {
     },
   },
 }
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"pyright-langserver", "--stdio"},
+  filetypes = { "python" },
+  root_dir = util.root_pattern("pyproject.toml", "setup.py", "setup.cfg", "requirements.txt", ".git"),
+}
