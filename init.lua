@@ -19,3 +19,10 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+vim.cmd [[
+  augroup GoSettings
+    autocmd!
+    autocmd FileType go setlocal shiftwidth=4 tabstop=4
+  augroup END
+]]
