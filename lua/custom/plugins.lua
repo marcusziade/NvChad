@@ -73,5 +73,8 @@ local plugins = {
       }
     end,
   },
+  {
+   "wakatime/vim-wakatime", lazy = false
+  },
 }
 return plugins
